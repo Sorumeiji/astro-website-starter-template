@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+p {
+    max-width: 65ch;
+}
+
+blockquote {
+    max-width: 50ch;
+}
+
+p,
+blockquote,
+li {
+    font-size: fs(step-1);
+}
+
+h1 {
+    font-size: fs(step-5);
+    max-width: 30ch;
+}
+
+h2 {
+    font-size: fs(step-4);
+}
+
+h3 {
+    font-size: fs(step-4);
+}
+
+h2,
+h3 {
+    max-width: 28ch;
+}
