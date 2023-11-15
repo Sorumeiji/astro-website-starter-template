@@ -1,22 +1,26 @@
 import { defineConfig } from 'astro/config';
-
 import react from "@astrojs/react";
+import mdx from "@astrojs/mdx";
 
 const tina = ({
   directiveName = 'tina'
 } = {}) => ({
   name: 'tina-cms',
   hooks: {
-    'astro:config:setup': ({ addClientDirective, opts }) => {
+    'astro:config:setup': ({
+      addClientDirective,
+      opts
+    }) => {
       addClientDirective({
         name: directiveName,
-        entrypoint: './client-directives/tina.mjs',
-      })
+        entrypoint: './client-directives/tina.mjs'
+      });
     }
   }
-})
+});
+
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tina()]
+  integrations: [react(), tina(), mdx()]
 });

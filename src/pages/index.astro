@@ -2,11 +2,13 @@
 import { client } from '../../tina/__generated__/client';
 import { MyComponent } from '../components/react';
 import Layout from '../layouts/layout.astro';
-const response = await client.queries.post({ relativePath: 'hello-world.md' });
+const response = await client.queries.post({ relativePath: 'hello-world.mdx' });
 ---
 
 <Layout title=''>
 	<main>
-		<MyComponent client:tina {...response} />
+		<div class='container' data-type='narrow'>
+			<MyComponent client:tina {...response} />
+		</div>
 	</main>
 </Layout>
