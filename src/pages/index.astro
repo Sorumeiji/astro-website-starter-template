@@ -1,9 +1,12 @@
 ---
+import { client } from '../../tina/__generated__/client';
+import { MyComponent } from '../components/react';
 import Layout from '../layouts/layout.astro';
+const response = await client.queries.post({ relativePath: 'hello-world.md' });
 ---
 
 <Layout title=''>
 	<main>
-		<h1 style='text-align: center;'>Astro Starter Template</h1>
+		<MyComponent client:tina {...response} />
 	</main>
 </Layout>
