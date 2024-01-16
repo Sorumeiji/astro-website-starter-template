@@ -8,6 +8,7 @@ const response = await client.queries.post({ relativePath: 'hello-world.mdx' });
 <Layout title=''>
 	<main>
 		<div class='container' data-type='narrow'>
+			<h1>Hello World!</h1>
 			<MyComponent client:tina {...response} />
 		</div>
 	</main>
